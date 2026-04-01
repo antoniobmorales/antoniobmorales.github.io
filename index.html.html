@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Antonio Bruno de Carvalho Morales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1a2744;
+      --gold: #b8963e;
+      --gold-light: #d4b06a;
+      --cream: #f7f4ef;
+      --text: #2c2c2a;
+      --muted: #666660;
+      --border: rgba(0,0,0,0.1);
+    }
+
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text); }
+
+    .site-wrapper { max-width: 900px; margin: 0 auto; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 2rem; border-bottom: 1px solid var(--border);
+      background: var(--cream); position: sticky; top: 0; z-index: 10;
+    }
+    .nav-name { font-family: 'Crimson Pro', serif; font-size: 1.1rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 1.6rem; }
+    .nav-links a { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: start; padding: 4rem 2rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--gold); font-weight: 500; margin-bottom: 0.8rem; font-family: 'DM Mono', monospace; }
+    .hero-name { font-family: 'Crimson Pro', serif; font-size: 2.8rem; font-weight: 300; line-height: 1.15; color: var(--navy); margin-bottom: 0.4rem; }
+    .hero-title { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.6rem; font-weight: 300; }
+    .hero-bio { font-size: 0.95rem; line-height: 1.8; color: var(--text); font-weight: 300; max-width: 520px; }
+    .hero-photo {
+      width: 160px; height: 200px;
+      background: linear-gradient(135deg, #d4c5a0 0%, #b8a882 100%);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-family: 'Crimson Pro', serif; font-size: 3.5rem; color: #fff;
+      font-weight: 300; letter-spacing: 0.05em; opacity: 0.9;
+    }
+
+    /* CONTACT BAR */
+    .contact-bar {
+      display: flex; gap: 2rem; padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--border); background: var(--navy); flex-wrap: wrap;
+    }
+    .contact-item { display: flex; align-items: center; gap: 0.5rem; }
+    .contact-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); font-family: 'DM Mono', monospace; }
+    .contact-value { font-size: 0.82rem; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .contact-value:hover { color: var(--gold-light); }
+    .contact-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); }
+
+    /* SECTIONS */
+    .section { padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+    .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .section-line { flex: 1; height: 1px; background: var(--border); }
+    .section-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); font-family: 'DM Mono', monospace; white-space: nowrap; }
+
+    /* TWO-COLUMN */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+    .two-col .section { border-bottom: none; border-right: 1px solid var(--border); }
+    .two-col .section:last-child { border-right: none; }
+
+    /* EDUCATION */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .about-card { padding: 1.2rem; border: 0.5px solid var(--border); border-radius: 6px; background: #fff; }
+    .about-card-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; font-family: 'DM Mono', monospace; }
+    .about-card-value { font-size: 0.88rem; line-height: 1.6; color: var(--text); font-weight: 300; }
+
+    /* RESEARCH */
+    .research-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .tag { padding: 0.3rem 0.8rem; border: 0.5px solid rgba(184,150,62,0.4); border-radius: 100px; font-size: 0.78rem; color: var(--navy); background: rgba(184,150,62,0.07); font-weight: 400; }
+    .research-text { font-size: 0.88rem; line-height: 1.8; color: var(--muted); font-weight: 300; }
+
+    /* LECTURE NOTES */
+    .note-item {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      padding: 0.9rem 0; border-bottom: 0.5px solid var(--border);
+    }
+    .note-item:last-of-type { border-bottom: none; }
+    .note-icon {
+      width: 32px; height: 32px; border-radius: 6px; flex-shrink: 0;
+      background: rgba(26,39,68,0.06); display: flex; align-items: center;
+      justify-content: center; font-size: 12px; color: var(--navy); font-weight: 500;
+      font-family: 'DM Mono', monospace; margin-top: 2px;
+    }
+    .note-info { flex: 1; }
+    .note-title { font-size: 0.88rem; font-weight: 500; color: var(--navy); margin-bottom: 0.2rem; }
+    .note-meta { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+    .note-badge {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem; border-radius: 100px;
+      background: rgba(184,150,62,0.1); color: var(--gold);
+      font-family: 'DM Mono', monospace; white-space: nowrap; align-self: center;
+    }
+
+    /* LINKS */
+    .links-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .link-card {
+      display: flex; flex-direction: column; padding: 1.2rem;
+      border: 0.5px solid var(--border); border-radius: 6px; background: #fff;
+      text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; cursor: pointer;
+    }
+    .link-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .link-icon { width: 32px; height: 32px; border-radius: 6px; margin-bottom: 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; }
+    .link-icon.lattes { background: rgba(26,39,68,0.08); color: var(--navy); }
+    .link-icon.linkedin { background: rgba(0,119,181,0.1); color: #0077b5; }
+    .link-icon.email { background: rgba(184,150,62,0.12); color: var(--gold); }
+    .link-card-title { font-size: 0.82rem; font-weight: 500; color: var(--navy); margin-bottom: 0.2rem; }
+    .link-card-desc { font-size: 0.75rem; color: var(--muted); font-weight: 300; }
+
+    /* FOOTER */
+    footer { padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: var(--muted); }
+    .footer-inst { font-family: 'DM Mono', monospace; letter-spacing: 0.06em; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { width: 100px; height: 125px; font-size: 2.5rem; }
+      .two-col { grid-template-columns: 1fr; }
+      .two-col .section { border-right: none; border-bottom: 1px solid var(--border); }
+      .about-grid { grid-template-columns: 1fr; }
+      .links-grid { grid-template-columns: 1fr; }
+      .contact-bar { gap: 1rem; }
+      .contact-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <nav>
+    <span class="nav-name">Antonio B. Morales</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#notes">Lecture Notes</a>
+      <a href="#links">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Insper — São Paulo, Brazil</div>
+      <h1 class="hero-name">Antonio Bruno<br>de Carvalho Morales</h1>
+      <p class="hero-title">Professor · PhD in Economic Theory — FEA/USP</p>
+      <p class="hero-bio">
+        Economist and physicist with interests in economic growth, dynamic macroeconomics, game theory, and choice theory. I also pursue interests in functional analysis, differentiable manifolds, Lie groups, general relativity, and quantum field theory.
+      </p>
+    </div>
+    <div class="hero-photo">AM</div>
+  </div>
+
+  <div class="contact-bar">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <a href="mailto:antoniobcm2@insper.edu.br" class="contact-value">antoniobcm2@insper.edu.br</a>
+    </div>
+    <div class="contact-sep"></div>
+    <div class="contact-item">
+      <span class="contact-label">Institution</span>
+      <span class="contact-value">Insper · Vila Olímpia, São Paulo</span>
+    </div>
+    <div class="contact-sep"></div>
+    <div class="contact-item">
+      <span class="contact-label">Appointment</span>
+      <span class="contact-value">Part-time faculty</span>
+    </div>
+  </div>
+
+  <div class="section" id="about">
+    <div class="section-header">
+      <span class="section-title">Education</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-card-label">PhD</div>
+        <div class="about-card-value">Economic Theory<br><span style="color:var(--muted)">FEA · University of São Paulo</span></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-label">MSc (in progress)</div>
+        <div class="about-card-value">Physics<br><span style="color:var(--muted)">Institute of Physics · USP</span></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-label">BSc — Economics</div>
+        <div class="about-card-value">EESP<br><span style="color:var(--muted)">Fundação Getulio Vargas</span></div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-label">BSc — Physics</div>
+        <div class="about-card-value">Institute of Physics<br><span style="color:var(--muted)">University of São Paulo</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="two-col" id="research">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Research interests</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="research-tags">
+        <span class="tag">Economic growth</span>
+        <span class="tag">Dynamic macroeconomics</span>
+        <span class="tag">Game theory</span>
+        <span class="tag">Choice theory</span>
+        <span class="tag">Functional analysis</span>
+        <span class="tag">Differentiable manifolds</span>
+        <span class="tag">Lie groups</span>
+        <span class="tag">General relativity</span>
+        <span class="tag">Quantum field theory</span>
+      </div>
+      <p class="research-text">
+        My research sits at the intersection of economic theory and mathematical physics, with a focus on the formal foundations of growth models, strategic behavior, and choice dynamics.
+      </p>
+    </div>
+
+    <div class="section" id="notes">
+      <div class="section-header">
+        <span class="section-title">Lecture notes</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="note-item">
+        <div class="note-icon">MM</div>
+        <div class="note-info">
+          <div class="note-title">Mathematical Methods</div>
+          <div class="note-meta">Graduate · Insper</div>
+        </div>
+        <span class="note-badge">PDF</span>
+      </div>
+
+      <div class="note-item">
+        <div class="note-icon">DM</div>
+        <div class="note-info">
+          <div class="note-title">Dynamical Macroeconomics</div>
+          <div class="note-meta">Graduate · Insper</div>
+        </div>
+        <span class="note-badge">PDF</span>
+      </div>
+
+      <div class="note-item">
+        <div class="note-icon">DT</div>
+        <div class="note-info">
+          <div class="note-title">Democratization Theory</div>
+          <div class="note-meta">Graduate · Insper</div>
+        </div>
+        <span class="note-badge">PDF</span>
+      </div>
+
+      <p style="font-size:0.75rem; color:var(--muted); margin-top:1.2rem; font-weight:300;">
+        Links and materials available upon request.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="links">
+    <div class="section-header">
+      <span class="section-title">Links & contact</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="links-grid">
+      <a class="link-card" href="http://lattes.cnpq.br/3183608890428312" target="_blank" rel="noopener">
+        <div class="link-icon lattes">L</div>
+        <div class="link-card-title">Lattes CV</div>
+        <div class="link-card-desc">CNPq · Full academic record</div>
+      </a>
+      <a class="link-card" href="https://www.linkedin.com/in/ant%C3%B4nio-morales-32632b95/" target="_blank" rel="noopener">
+        <div class="link-icon linkedin">in</div>
+        <div class="link-card-title">LinkedIn</div>
+        <div class="link-card-desc">Professional profile</div>
+      </a>
+      <a class="link-card" href="mailto:antoniobcm2@insper.edu.br">
+        <div class="link-icon email">@</div>
+        <div class="link-card-title">Email</div>
+        <div class="link-card-desc">antoniobcm2@insper.edu.br</div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-inst">Insper · São Paulo, SP · Brazil</span>
+    <span>Antonio Bruno de Carvalho Morales</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
